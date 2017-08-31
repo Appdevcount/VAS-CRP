@@ -1,0 +1,236 @@
+﻿@*@using WebApplication.Extensions*@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VAS-CRP</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    @*@Styles.Render("~/bundles/Content/ACustom/plugins/font-awesome/css")*@
+    <link href="~/Content/ACustom/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    @Styles.Render("~/bundles/Content/ACustom/plugins/ionicons/css")
+    @Styles.Render("~/bundles/Content/ACustom/bootstrap/css")
+    @Styles.Render("~/bundles/Content/ACustom/dist/css")
+    @Styles.Render("~/bundles/Content/ACustom/dist/css/skins")
+
+    @Styles.Render("~/Content/ej/web/bootstrap-theme/ej.web.all.min.css")
+
+    @*<link href="~/Content/ACustom/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+        <link href="~/Content/ACustom/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+
+        <link href="~/Content/ACustom/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+        <link href="~/Content/ACustom/dist/css/admin-lte.min.css" rel="stylesheet" />
+
+        <link href="~/Content/ACustom/dist/css/skins/_all-skins.min.css" rel="stylesheet" />
+
+
+        <link href="~/Content/ej/web/bootstrap-theme/ej.web.all.min.css" rel="stylesheet" />*@
+
+    @Scripts.Render("~/bundles/Content/ACustom/plugins/jquery/js")
+
+    @Scripts.Render("~/Scripts/jsrender.min.js")
+    <script src="~/Scripts/jquery.easing.1.3.js"></script>
+    @Scripts.Render("~/Scripts/ej/web/ej.web.all.min.js")
+    <script src="~/Scripts/ej/common/ej.unobtrusive.min.js"></script>
+
+    @RenderSection("menu", required: false)
+    @Scripts.Render("~/bundles/Content/ACustom/bootstrap/js")
+    @Scripts.Render("~/bundles/Content/ACustom/plugins/slimscroll/js")
+    @Scripts.Render("~/bundles/Content/ACustom/plugins/fastclick/js")
+    @Scripts.Render("~/bundles/Scripts/Shared/Layout")
+    @Scripts.Render("~/bundles/Content/ACustom/dist/js")
+
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script src="~/Scripts/moment.min.js"></script>
+    <link href="~/Scripts/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="@Url.Action("Welcome", "Home" )" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini">
+                    <b>Og</b>
+                </span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg">
+                    <img src="~/Content/Images/VASLogo.jpg" width="220" height="48" />
+                </span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        @*<i class="fa fa-music" aria-hidden="true"></i>*@
+                        <li class="active"><a href="#"><i class="fa fa-2x fa-music" aria-hidden="true"></i><span class="h3">  Link </span><span class="sr-only">(current)</span></a></li>
+                        <li><a href="#"><i class="fa fa-2x fa-home" aria-hidden="true"></i>Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-2x fa-anchor" aria-hidden="true"></i>Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#"><i class="fa fa-2x fa-music" aria-hidden="true"></i>Action</a></li>
+                                <li><a href="#"><i class="fa fa-2x fa-music" aria-hidden="true"></i>Another action</a></li>
+                                <li><a href="#"><i class="fa fa-2x fa-music" aria-hidden="true"></i>Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="fa fa-2x fa-music" aria-hidden="true"></i>Separated link</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="fa fa-2x fa-music" aria-hidden="true"></i>One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-custom-menu">
+
+                    <ul class="nav navbar-nav">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="hidden-xs">Hello  @Session["Username"] </span>
+                                <span><i class="fa fa-fw fa-user fa-2x user-image"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-body">
+                                    <div class="row">
+                                        <div class="text-center">
+                                            <a href="#">@*Role*@</a>
+                                        </div>
+                                    </div>
+                                    <!-- /.row -->
+                                </li>
+
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="text-center">
+                                        <a href="@Url.Action("Logout", "Auth" )" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    @*<ul class="nav navbar-nav">
+                            @Html.Partial("_LoginPartial")
+                            <li>
+                                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                            </li>
+                        </ul>*@
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="header text-bold text-lime text-center"> Reports</li>
+                    <li id="left-sidebar-menu-dashboard" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-dashboard"></i> <span>OnSDP Services</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-dashboard-dashboardV1"><a href="@Url.Action("OnSDPSvc", "OnSDPSvcRpt" )"><i class="fa fa-circle-o"></i> Filtered Details</a></li>
+                            <li id="left-sidebar-menu-dashboard-dashboardV1"><a href="@Url.Action("KuwaitZainOnSDPReport", "OnSDPSvcRpt" )"><i class="fa fa-circle-o"></i> Kuwait Zain</a></li>
+                            <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("KuwaitOoredooOnSDPReport", "OnSDPSvcRpt" )"><i class="fa fa-circle-o"></i> Kuwait Ooredoo</a></li>
+                            <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("IraqZainOnSDPReport", "OnSDPSvcRpt" )"><i class="fa fa-circle-o"></i> Iraq Zain</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                @*<h1>
+                        @ViewBag.Title
+                        <small>@ViewBag.SubTitle</small>
+                    </h1>*@
+
+            </section>
+            <section class="content">
+                @RenderBody()
+            </section>
+        </div>
+
+        <footer class="main-footer">
+
+            <strong>One Global - VAS</strong>
+        </footer>
+
+    </div>
+
+
+    @*<script src="~/Content/ACustom/plugins/jquery/js/jQuery-2.1.4.min.js"></script>
+
+
+        <script src="~/Scripts/jsrender.min.js"></script>
+
+        <script src="~/Scripts/jquery.easing.1.3.js"></script>
+        <script src="~/Scripts/ej/web/ej.web.all.min.js"></script>
+
+
+
+        <script src="~/Content/ACustom/bootstrap/js/bootstrap.min.js"></script>
+
+        <script src="~/Content/ACustom/plugins/slimscroll/js/jquery.slimscroll.min.js"></script>
+
+        <script src="~/Content/ACustom/plugins/fastclick/js/fastclick.min.js"></script>
+
+        <script src="~/Scripts/Shared/_Layout.js"></script>
+
+        <script src="~/Content/ACustom/dist/js/app.js"></script>*@
+
+
+
+
+    @Html.EJ().ScriptManager()
+    @RenderSection("scripts", required: false)
+
+    
+
+    <div id='preloader'>
+        <div id='status'>
+            <img alt='' height='64' src='~/Content/Images/Triangular Circle.gif' width='64' />
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(window).load(function () {
+
+            $("#status").fadeOut("slow");
+
+            $("#preloader").delay(500).fadeOut("slow").remove();
+
+        })
+    </script>
+    <style type="text/css">
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #222222;
+            z-index: 99999;
+            height: 100%;
+        }
+
+        #status {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 64px;
+            height: 64px;
+            margin: -32px 0 0 -32px;
+            padding: 0;
+        }
+    </style>
+
+
+</body>
+</html>

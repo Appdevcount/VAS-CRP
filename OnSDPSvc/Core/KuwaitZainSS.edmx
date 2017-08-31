@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ZainKuwaitModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ZainKuwait.dbo.ZainSplServices_Subscribers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ZainSplServices_Subscribers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ZainSplServices_OrderRelationID" Type="bigint" />
+          <Property Name="UserID" Type="varchar" MaxLength="25" />
+          <Property Name="ProductID" Type="varchar" MaxLength="25" />
+          <Property Name="ServiceID" Type="varchar" MaxLength="25" />
+          <Property Name="ServiceList" Type="varchar" MaxLength="1000" />
+          <Property Name="UpdateDesc" Type="varchar" MaxLength="50" />
+          <Property Name="RentSuccess" Type="bit" />
+          <Property Name="TranDate" Type="datetime" />
+          <Property Name="LastUpdate" Type="datetime" />
+          <Property Name="ContentIDSeq" Type="int" />
+          <Property Name="ContentSentDate" Type="smalldatetime" />
+          <Property Name="RequestJson" Type="varchar" MaxLength="900" />
+          <Property Name="ResponseJson" Type="varchar" MaxLength="900" />
+          <Property Name="Newer" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="ZainKuwaitModelStoreContainer">
+          <EntitySet Name="ZainSplServices_Subscribers" EntityType="Self.ZainSplServices_Subscribers" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ZainSplServices_Subscribers].[ID] AS [ID], 
+    [ZainSplServices_Subscribers].[ZainSplServices_OrderRelationID] AS [ZainSplServices_OrderRelationID], 
+    [ZainSplServices_Subscribers].[UserID] AS [UserID], 
+    [ZainSplServices_Subscribers].[ProductID] AS [ProductID], 
+    [ZainSplServices_Subscribers].[ServiceID] AS [ServiceID], 
+    [ZainSplServices_Subscribers].[ServiceList] AS [ServiceList], 
+    [ZainSplServices_Subscribers].[UpdateDesc] AS [UpdateDesc], 
+    [ZainSplServices_Subscribers].[RentSuccess] AS [RentSuccess], 
+    [ZainSplServices_Subscribers].[TranDate] AS [TranDate], 
+    [ZainSplServices_Subscribers].[LastUpdate] AS [LastUpdate], 
+    [ZainSplServices_Subscribers].[ContentIDSeq] AS [ContentIDSeq], 
+    [ZainSplServices_Subscribers].[ContentSentDate] AS [ContentSentDate], 
+    [ZainSplServices_Subscribers].[RequestJson] AS [RequestJson], 
+    [ZainSplServices_Subscribers].[ResponseJson] AS [ResponseJson], 
+    [ZainSplServices_Subscribers].[Newer] AS [Newer]
+    FROM [dbo].[ZainSplServices_Subscribers] AS [ZainSplServices_Subscribers]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ZainKuwaitModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ZainSplServices_Subscribers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ZainSplServices_OrderRelationID" Type="Int64" />
+          <Property Name="UserID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ProductID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceList" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RentSuccess" Type="Boolean" />
+          <Property Name="TranDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdate" Type="DateTime" Precision="3" />
+          <Property Name="ContentIDSeq" Type="Int32" />
+          <Property Name="ContentSentDate" Type="DateTime" Precision="0" />
+          <Property Name="RequestJson" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+          <Property Name="ResponseJson" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+          <Property Name="Newer" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="ZainKuwaitEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ZainSplServices_Subscribers" EntityType="Self.ZainSplServices_Subscribers" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ZainKuwaitModelStoreContainer" CdmEntityContainer="ZainKuwaitEntities">
+          <EntitySetMapping Name="ZainSplServices_Subscribers">
+            <EntityTypeMapping TypeName="ZainKuwaitModel.ZainSplServices_Subscribers">
+              <MappingFragment StoreEntitySet="ZainSplServices_Subscribers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ZainSplServices_OrderRelationID" ColumnName="ZainSplServices_OrderRelationID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="ServiceList" ColumnName="ServiceList" />
+                <ScalarProperty Name="UpdateDesc" ColumnName="UpdateDesc" />
+                <ScalarProperty Name="RentSuccess" ColumnName="RentSuccess" />
+                <ScalarProperty Name="TranDate" ColumnName="TranDate" />
+                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+                <ScalarProperty Name="ContentIDSeq" ColumnName="ContentIDSeq" />
+                <ScalarProperty Name="ContentSentDate" ColumnName="ContentSentDate" />
+                <ScalarProperty Name="RequestJson" ColumnName="RequestJson" />
+                <ScalarProperty Name="ResponseJson" ColumnName="ResponseJson" />
+                <ScalarProperty Name="Newer" ColumnName="Newer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

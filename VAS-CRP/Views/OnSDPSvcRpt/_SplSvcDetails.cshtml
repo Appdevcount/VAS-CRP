@@ -1,0 +1,62 @@
+﻿
+@model OnSDPSvc.Infrastructure.ResultModel.SplSvcDetails
+
+<h3>@ViewBag.Report</h3>
+
+
+<div class="text-center text-primary h3">Special Services Details</div>
+
+
+@(Html.EJ().Grid<OnSDPSvc.Infrastructure.ResultModel.SpecialServices>("SpecialServices")
+                    .Datasource(Model.SpecialServices)
+                    .AllowPaging()
+                    .AllowFiltering()
+                    .AllowSorting()
+                    .FilterSettings(filter => { filter.FilterType(FilterType.Menu); })
+                    .Columns(col =>
+                    {
+                        col.Field("ProductID").HeaderText("ProductID").Add();
+                        col.Field("ServiceName").HeaderText("ServiceName").Add();
+                        col.Field("ShortCode").HeaderText("ShortCode").Add();
+                        col.Field("BillingStatus").HeaderText("BillingStatus").Add();
+                        col.Field("Subscribers").HeaderText("Subscribers").Add();
+                    }))
+
+
+
+<div class="text-center text-primary h3">Special Services Subscriber Details</div>
+
+
+
+@(Html.EJ().Grid<OnSDPSvc.Infrastructure.ResultModel.SpecialServicesSubscribers>("SpecialServicesSubscribers")
+                    .Datasource(Model.SpecialServicesSubscribers)
+                    .AllowPaging()
+                    .AllowFiltering()
+                    .AllowSorting()
+                    .FilterSettings(filter => { filter.FilterType(FilterType.Menu); })
+                    .Columns(col =>
+                    {
+                        col.Field("ProductID").HeaderText("ProductID").Add();
+                        col.Field("ServiceName").HeaderText("ServiceName").Add();
+                        col.Field("ShortCode").HeaderText("ShortCode").Add();
+                        col.Field("MSISDN").HeaderText("MSISDN").Add();
+                        col.Field("BillingStatus").HeaderText("BillingStatus").Add();
+                        col.Field("LastTranDate").HeaderText("LastTranDate").Add();
+                    }))
+
+
+@*Error during serialization or deserialization using the JSON JavaScriptSerializer. The length of the string exceeds the value set on the maxJsonLength property.
+
+    Description: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+    Exception Details: System.InvalidOperationException: Error during serialization or deserialization using the JSON JavaScriptSerializer. The length of the string exceeds the value set on the maxJsonLength property.
+
+    Source Error:
+
+
+    Line 31:
+    Line 32:
+    Line 33: @(Html.EJ().Grid<OnSDPSvc.Infrastructure.ResultModel.SpecialServicesSubscribers>
+        ("SpecialServicesSubscribers")
+        Line 34:                     .Datasource(Model.SpecialServicesSubscribers)
+        Line 35:                     .AllowPaging()*@
