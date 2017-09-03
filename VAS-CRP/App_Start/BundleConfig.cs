@@ -10,7 +10,7 @@ namespace VAS_CRP
             RegisterShared(bundles);
             RegisterAccount(bundles);
             //BundleTable.EnableOptimizations = true;
-        }
+        } 
 
         private static void RegisterShared(BundleCollection bundles)
         {
